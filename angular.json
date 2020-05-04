@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "gcp-cloudrun-gke-angular"
+    }
+  },
+  "defaultProject": "gcp-cloudrun-gke-angular",
+  "cli": {
+    "analytics": false
+  }
 }
