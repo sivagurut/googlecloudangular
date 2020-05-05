@@ -10,13 +10,10 @@ steps:
 
   # Deploy container image to Cloud Run
   - name: gcr.io/cloud-builders/gcloud
-    args: [ 'config', 'set', 'compute/zone', 'us-central1-a']
-  - name: gcr.io/cloud-builders/gcloud
-    args: ['compute', 'instances', 'update-container', '${_VM_INSTANCE}' , '--container-image=gcr.io/${_PROJECT_ID}/gcp-cloudrun-gke-angular:latest', '--zone=us-central1-a']
-  - name: gcr.io/cloud-builders/gcloud
-    args: [ beta, run, deploy, gcp-cloudrun-gke-angular, --image, gcr.io/$PROJECT_ID/gcp-cloudrun-gke-angular, --platform, gke, --cluster, cloudrun-angular-cluster]
-  
+    args: [ beta, run, deploy, gke-angular, --image, gcr.io/$PROJECT_ID/gcp-cloudrun-gke-angular, --platform, gke, --cluster, cloudrun-angular-cluster, --cluster-location, us-central1-a ]
+
 
 images:
 
 - gcr.io/$PROJECT_ID/gcp-cloudrun-gke-angular
+
