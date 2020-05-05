@@ -10,7 +10,7 @@ steps:
 
   # Deploy container image to Cloud Run
   - name: gcr.io/cloud-builders/gcloud
-    args: [ beta, run, deploy, gke-angular, --image, gcr.io/$PROJECT_ID/gcp-cloudrun-gke-angular, --platform, gke, --cluster, cloudrun-angular-cluster, --cluster-location, us-central1-a ]
+    args: [ beta, run, deploy, gcp-cloudrun-gke-angular, --image, gcr.io/$PROJECT_ID/gcp-cloudrun-gke-angular, --platform, gke, --cluster, cloudrun-angular-cluster, --cluster-location, us-central1-a ]
 
 
 images:
