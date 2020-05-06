@@ -7,10 +7,12 @@ import { ErrorComponent } from './features/error/error.component';
 import { HomeComponent } from './features/home/home.component';
 import { LogoutComponent } from './features/logout/logout.component';
 import { RouteGuardService } from './shared/service/routeguard.service';
+import { ApiComponent } from './features/api/api.component';
 const routes: Routes = [
   { path: '', component: LoginComponent  },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [RouteGuardService]  },
+  { path: 'api', component: ApiComponent, canActivate: [RouteGuardService]  },
   { path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService] },
   { path: '**', component: ErrorComponent }
 ];

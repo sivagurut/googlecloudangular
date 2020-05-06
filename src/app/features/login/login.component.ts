@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   handleLogin() {
-
     if (this.authenticationService.authenticate(this.username, this.password)) {
       // Redirect to Welcome Page
       this.router.navigate(['home']);

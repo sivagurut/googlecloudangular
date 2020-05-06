@@ -8,13 +8,19 @@ export class AuthenticationService {
   constructor() { }
 
   authenticate(username, password) {
-    // console.log('before ' + this.isUserLoggedIn());
+    let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
+
+   
     if (username === 'test' && password === 'test@123') {
       sessionStorage.setItem('authenticaterUser', username);
+      sessionStorage.setItem('basicAuthHeaderString', basicAuthHeaderString);
       // console.log('after ' + this.isUserLoggedIn());
       return true;
     }
     return false;
+  }
+  getToken(){
+    return sessionStorage.getItem('basicAuthHeaderString');
   }
 
   isUserLoggedIn() {

@@ -12,6 +12,8 @@ import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { LogoutComponent } from './features/logout/logout.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ApiComponent } from './features/api/api.component';
+import { HttpIntercepterBasicAuthService } from './shared/http/http-intercepter-basic-auth.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ErrorComponent,
     HeaderComponent,
     FooterComponent,
-    LogoutComponent
+    LogoutComponent,
+    ApiComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpIntercepterBasicAuthService, multi: true }
+ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
