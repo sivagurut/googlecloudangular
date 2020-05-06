@@ -1,0 +1,20 @@
+{
+  "/demo/*": {
+    "target": "http://35.184.75.216:8080/demoservice",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+	 "pathRewrite": {
+      "^/demo/": ""
+    }
+  },
+   "/api/*": {
+    "target": "http://34.68.174.242:8080",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+	 "pathRewrite": {
+      "^/api/": ""
+    }
+  }
+}
