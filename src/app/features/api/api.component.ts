@@ -12,10 +12,22 @@ export class ApiComponent implements OnInit {
   helloApi: any;
   helloBean: any;
   helloBeanPathVariable: any;
+  executeHelloWorld: any;
   ngOnInit(): void {
     this.getHelloApi();
     this.getHelloBean();
     this.getHelloBeanPathVariable('World!');
+  }
+  getExecuteHelloWorld(){
+     this.apiService.executeHelloWorld().subscribe( data => {
+      console.log(data);
+      this.executeHelloWorld = data;
+      
+    },
+    error => {
+      console.log(error)
+    
+    });
   }
   getHelloApi(){
     this.apiService.executeApiService().subscribe( data => {
