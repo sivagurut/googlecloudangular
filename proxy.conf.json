@@ -1,20 +1,20 @@
 {
-  "/demo/*": {
-    "target": "http://35.184.75.216:8080/demoservice",
+  "/helloapi/**": {
+    "target": "https://hello-service-6xgn7czs6q-uc.a.run.app",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true,
 	 "pathRewrite": {
-      "^/demo/": ""
+      "^/helloapi/": ""
     }
   },
-   "/api/*": {
-    "target": "http://34.68.174.242:8080",
+   "/apip/**": {
+    "target": "https://demoservice-6xgn7czs6q-uc.a.run.app",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true,
 	 "pathRewrite": {
-      "^/api/": ""
+      "^/apip/": ""
     }
   }
 }
