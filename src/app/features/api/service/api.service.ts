@@ -20,15 +20,12 @@ export class ApiService {
   } 
   executeApiService() {
     return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/api`);    
-  } 
-  executeHelloWorldApi() {
-    return this.http.get(`${HELLO_API_URL}`);    
-  } 
-  executeHelloWorld() {
-    return this.http.get(`${API_URL}`);    
-  } 
+  }  
   executeHelloWorldServiceWithPathVariable(name) {
     return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/hello-world/path-variable/${name}`);    
   }
+   executeHelloWorld() {
+    return this.http.get(`${API_URL}`);    
+  } 
 
 }
