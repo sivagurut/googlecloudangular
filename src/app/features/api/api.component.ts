@@ -9,7 +9,9 @@ import { ApiService } from './service/api.service';
 export class ApiComponent implements OnInit {
 
   constructor(private apiService: ApiService) { }
-
+  helloApi: any;
+  helloBean: any;
+  helloBeanPathVariable: any;
   ngOnInit(): void {
     this.getHelloApi();
     this.getHelloBean();
@@ -17,7 +19,8 @@ export class ApiComponent implements OnInit {
   }
   getHelloApi(){
     this.apiService.executeHelloWorld().subscribe( data => {
-      console.log(data)
+      console.log(data);
+      this.helloApi = data;
       
     },
     error => {
@@ -27,7 +30,8 @@ export class ApiComponent implements OnInit {
   }
   getHelloBean(){
     this.apiService.executeHelloWorldBeanService().subscribe( data => {
-      console.log(data)      
+      console.log(data);
+      this.helloBean = data;
     },
     error => {
       console.log(error)
@@ -36,7 +40,8 @@ export class ApiComponent implements OnInit {
   }
   getHelloBeanPathVariable(pathvariable:string){
     this.apiService.executeHelloWorldServiceWithPathVariable(pathvariable).subscribe( data => {
-      console.log(data)      
+      console.log(data);
+      this.helloBeanPathVariable = data;
     },
     error => {
       console.log(error)
