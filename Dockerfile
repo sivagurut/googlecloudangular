@@ -13,7 +13,7 @@ RUN mkdir /var/logs/nginx
 ## Copy a new configuration file setting listen port to 8080
 COPY ./docker/nginx-alpine-custom/default.conf /etc/nginx/conf.d/
 ## Expose port 8080
-EXPOSE 8080
+EXPOSE 80
 ## Remove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
 ## From 'build' stage copy over the artifacts in dist folder to default nginx public folder
