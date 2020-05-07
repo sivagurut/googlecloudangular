@@ -18,7 +18,7 @@ export class ApiComponent implements OnInit {
     this.getHelloBeanPathVariable('World!');
   }
   getHelloApi(){
-    this.apiService.executeHelloWorld().subscribe( data => {
+    this.apiService.executeApiService().subscribe( data => {
       console.log(data);
       this.helloApi = data;
       
