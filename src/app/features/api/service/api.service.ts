@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-import { API_URL,HELLO_API_URL } from './../../../app.constants';
+import { HELLO_API_URL,API_URL } from './../../../app.constants';
 export class HelloWorldBean {
   constructor(public message:string){ }
 }
@@ -12,20 +13,22 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
 
-  executeHelloWorldBeanService() {
+  executeHelloWorldBeanService(): Observable<any> {
     return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/hello-world-bean`);    
   } 
-  executeIndexService() {
-    return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/index`);    
+  executeHelloWorld(): Observable<any> {
+    return this.http.get<any>(`${API_URL}/`);    
   } 
-  executeApiService() {
-    return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/api`);    
-  }  
-  executeHelloWorldServiceWithPathVariable(name) {
+  executeHelloWorldServiceWithPathVariable(name): Observable<any> {
     return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/hello-world/path-variable/${name}`);    
   }
-   executeHelloWorld() {
-    return this.http.get(`${API_URL}`);    
+    
+  executeIndexService(): Observable<any> {
+    return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/index`);    
   } 
+  executeApiService() : Observable<any>{
+    return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/api`);    
+  }  
+ 
 
 }
