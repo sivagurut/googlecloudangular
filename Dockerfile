@@ -2,7 +2,7 @@ FROM node:12-alpine as build-stage
 WORKDIR /app
 COPY . .
 RUN npm install && \
-    ng build
+    npm run build
 
 FROM nginx:alpine
 ## Copy a new configuration file setting logs base dir to /var/logs/nginx
