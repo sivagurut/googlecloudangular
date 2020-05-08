@@ -14,20 +14,18 @@ export class ApiService {
   constructor(private http:HttpClient) { }
 
   executeHelloWorldBeanService(): Observable<any> {
-    return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/hello-world-bean`);    
+    return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/helloservice/hello-world-bean`);    
   } 
-  executeHelloWorld(): Observable<any> {
-    return this.http.get<any>(`${API_URL}/`);    
-  } 
+ 
   executeHelloWorldServiceWithPathVariable(name): Observable<any> {
-    return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/hello-world/path-variable/${name}`);    
+    return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/helloservice/hello-world/path-variable/${name}`);    
   }
     
   executeIndexService(): Observable<any> {
-    return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/index`);    
+    return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/helloservice/index`);    
   } 
   executeApiService() : Observable<any>{
-    return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/api`);    
+    return this.http.get<HelloWorldBean>(`${HELLO_API_URL}/helloservice/api`);    
   }  
  
 
