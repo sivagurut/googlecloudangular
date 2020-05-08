@@ -13,14 +13,16 @@ export class HttpIntercepterBasicAuthService implements HttpInterceptor{
     let basicAuthHeaderString = this.authenticationService.getToken();
     let username = this.authenticationService.isUserLoggedIn()
 
-    if(basicAuthHeaderString && username) { 
-      request = request.clone({
-        setHeaders : {
-            Authorization : basicAuthHeaderString
-          }
-        }) 
-    }
-    return next.handle(request);
+     let customReq;
+ 
+      customReq = request.clone({
+        headers: request.headers.set('Content-Type', 'application/json')
+          .set('Accept', 'application/json')
+          .set('Cache-Control', 'no-cache')
+          .set('Pragma', 'no-cache')
+      });
+    
+    return next.handle(customReq);
   }
 
 
