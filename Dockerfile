@@ -2,7 +2,7 @@ FROM node:12-alpine as build-stage
 WORKDIR /app
 COPY . .
 RUN npm install && \
-    node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng build --prod
+    ng build
 
 FROM nginx:alpine
 ## Copy a new configuration file setting logs base dir to /var/logs/nginx
