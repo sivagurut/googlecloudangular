@@ -6,6 +6,8 @@ RUN npm install && \
 
 FROM nginx:alpine
 ## Copy a new configuration file setting logs base dir to /var/logs/nginx
+RUN rm -rf /etc/nginx/*
+RUN rm -rf /etc/nginx/conf.d/
 COPY ./docker/nginx-alpine-custom/nginx.conf /etc/nginx/
 ## Create the new /var/logs/nginx folder
 RUN mkdir /var/logs
