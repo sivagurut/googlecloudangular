@@ -1,2 +1,2 @@
-export const HELLO_API_URL = "/loads/zuulapi"
-export const API_URL = "/loads/zuulapi"
+export const HELLO_API_URL = "/zuulapi"
+export const API_URL = "/zuulapi"
