@@ -1,20 +1,11 @@
 {
-  "/helloapi/**": {
-    "target": "https://hello-service-6xgn7czs6q-uc.a.run.app",
+  "/loads/zuulapi/**": {
+    "target": "https://zuul-api-6xgn7czs6q-uc.a.run.app",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true,
-	 "pathRewrite": {
-      "^/helloapi/": ""
-    }
-  },
-   "/apip/**": {
-    "target": "https://demoservice-6xgn7czs6q-uc.a.run.app",
-    "secure": false,
-    "logLevel": "debug",
-    "changeOrigin": true,
-	 "pathRewrite": {
-      "^/apip/": ""
-    }
+    "pathRewrite": {
+      "^/loads/": ""
+    }	 
   }
 }
