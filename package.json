@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --base-href=/loads/ --proxy-config=proxy.conf.json",
-    "build": "node --max_old_space_size=12000 ./node_modules/@angular/cli/bin/ng build --prod --base-href=/loads/ --progress=false --aot=true --vendor-chunk",
+    "nghm": "node --max_old_space_size=1200 ./node_modules/@angular/cli/bin/ng",
+    "start": "npm run nghm -- serve --base-href=/loads/ --proxy-config=proxy.conf.json",
+    "build":"npm run nghm -- build --prod --base-href=/loads/ --progress=false --aot=true --vendor-chunk",    
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
