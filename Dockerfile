@@ -1,5 +1,6 @@
 FROM node:12-alpine AS build-stage
 WORKDIR /app
+RUN rm -rf /app/dist/*
 COPY . .
 RUN npm install && \
     npm run build
@@ -16,7 +17,7 @@ COPY ./docker/nginx-alpine-custom/default.conf /etc/nginx/conf.d/
 ## Expose port 8080
 EXPOSE 8080
 ## Remove default nginx website
-RUN rm -rf /app/dist/*
+
 RUN rm -rf /usr/share/nginx/html
 ## From 'build' stage copy over the artifacts in dist folder to default nginx public folder
 COPY --from=build-stage /app/dist/gcp-cloudrun-gke-angular /usr/share/nginx/html
