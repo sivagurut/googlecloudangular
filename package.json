@@ -5,7 +5,7 @@
     "ng": "ng",
     "nghm": "node --max_old_space_size=12000 ./node_modules/@angular/cli/bin/ng",
     "start": "npm run nghm -- serve --proxy-config=proxy.conf.json",
-    "build":"npm run nghm -- build --prod --progress=false --aot=true --vendor-chunk",    
+    "build": "npm run nghm -- build --prod --progress=false --aot=true --vendor-chunk",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
