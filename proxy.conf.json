@@ -1,11 +1,11 @@
 {
-  "/loads/zuulapi/**": {
+  "/marketplace/zuulapi/**": {
     "target": "https://zuul-api-6xgn7czs6q-uc.a.run.app",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true,
     "pathRewrite": {
-      "^/loads/": ""
+      "^/marketplace/": ""
     }	 
   }
 }
