@@ -1,6 +1,5 @@
 FROM node:12-alpine AS build-stage
 WORKDIR /app
-RUN rm -rf /app/dist/*
 COPY . .
 RUN npm install && \
     npm run build
