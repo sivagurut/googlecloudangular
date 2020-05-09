@@ -17,10 +17,7 @@ COPY ./docker/nginx-alpine-custom/default.conf /etc/nginx/conf.d/
 EXPOSE 8080
 ## Remove default nginx website
 RUN rm -rf /usr/share/nginx/html/*
-RUN rm -rf /usr/share/nginx/html/loads
-RUN rm -rf /usr/share/nginx/html/marketplace
-RUN mkdir /usr/share/nginx/html/marketplace
 ## From 'build' stage copy over the artifacts in dist folder to default nginx public folder
 COPY --from=build-stage /app/dist/gcp-cloudrun-gke-angular /usr/share/nginx/html
-COPY --from=build-stage /app/dist/gcp-cloudrun-gke-angular /usr/share/nginx/html/marketplace
+
 CMD ["nginx", "-g", "daemon off;"]
